@@ -1,0 +1,57 @@
+========================================
+双积分式电压表仿真报告
+Dual-Slope DVM Simulation Report
+========================================
+
+仿真时间: 08-Jan-2026 01:14:29
+总耗时: 34.62 秒
+
+----------------------------------------
+仿真模块执行情况
+----------------------------------------
+✓ 模块1: 基准电压偏差影响仿真
+✓ 模块2: 时钟量化误差影响仿真
+✓ 模块3: RC非理想因素影响仿真
+✓ 模块4: 工频干扰影响仿真
+
+----------------------------------------
+输出文件
+----------------------------------------
+结果表格:
+  - results_vref_error.xlsx
+  - results_clock_error.xlsx
+  - results_nonideal_rc.xlsx
+  - results_nonideal_rc_offset.xlsx
+  - results_nonideal_rc_bias.xlsx
+  - results_nonideal_rc_leak.xlsx
+  - results_powerline_noise.xlsx
+
+图表文件 (figures/):
+  结论1 (4张图): vref_error_vs_deviation.png, vref_relative_error.png,
+                 vref_stability_vs_accuracy.png, vref_linear_relationship.png
+  结论2 (6张图): clock_freq_vs_quantization_error.png, clock_period_vs_quantization_error.png,
+                 clock_freq_vs_resolution.png, clock_period_vs_resolution.png,
+                 clock_freq_vs_relative_error.png, clock_resolution_comparison.png
+  结论3 (6张图): rc_offset_error.png, rc_bias_error.png, rc_leak_error.png,
+                 rc_combined_error.png, rc_error_growth.png, rc_error_slope.png
+  结论4 (6张图): powerline_error_vs_ratio.png, powerline_rejection_ratio.png,
+                 powerline_time_domain.png, powerline_error_range.png,
+                 powerline_spectrum.png, powerline_comparison.png
+
+----------------------------------------
+仿真结论
+----------------------------------------
+1. 基准电压的稳定性显著影响双积分式电压表的测量精度，
+   且稳定性越高双积分式电压表的测量精度越高
+
+2. 在积分时间T_1一定的条件下，提高时钟频率减小T_{clk}
+   有利于降低量化误差，提高测量分辨率
+
+3. 如果积分器的RC处于非理想状态，积分时间越长对于
+   测试结果的影响更明显
+
+4. 当积分时间T_1取工频周期的整数倍时，工频干扰被完全抵消
+
+========================================
+报告结束
+========================================
